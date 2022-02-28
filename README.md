@@ -1,6 +1,6 @@
 # Project's name
 
-*Ironhack-Project-M2*
+*Ironhack-server-Project-M3*
 *Pokkemon App*
 *Version JS Platinum*
 
