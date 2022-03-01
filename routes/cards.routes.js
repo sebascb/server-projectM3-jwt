@@ -2,14 +2,19 @@ const router = require('express').Router();
 const Card = require('../models/Card.model');
 
 router.get('/', (req, res, next) => {
-  res.json('All good in here');
+  console.log("Im here")
+  Card.find({}).then(response => res.status(200).json(response)).catch(err => console.log(err))
+  // res.json('All good in here');
 });
 
 router.post('/cards', (req, res, next) => {
     const { image, name, element, description, attack, hp, ability } = req.body;
 
     Card.create({ image, name, element, description, attack, HP: hp, ability })
-        .then(response => res.json(response))
+        .then(response => {
+          console.log(response);
+          res.status(201).json({response: response.data})
+        })
         .catch(error => res.json(error));
 });
 
