@@ -1,37 +1,45 @@
 const router = require('express').Router();
 const Card = require('../models/Card.model');
 
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
   console.log("Im here")
-  Card.find({}).then(response => res.status(200).json(response)).catch(err => console.log(err))
-  // res.json('All good in here');
+  try {
+    const card = await Card.find();
+    res.json({ card });
+  } catch (error) {
+    res.json(error);
+  }
 });
 
 router.post('/cards', (req, res, next) => {
-    const { image, name, element, description, attack, hp, ability } = req.body;
-
-    Card.create({ image, name, element, description, attack, HP: hp, ability })
-        .then(response => {
-          console.log(response);
-          res.status(201).json({response: response.data})
-        })
-        .catch(error => res.json(error));
+  const { image, name, element, description, attack, hp, ability } = req.body;
+  try {
+    const card = await Card.create({ image, name, element, description, attack, HP: hp, ability });
+    res.json({ created: card });
+  } catch (error) {
+    next(error);
+  }
 });
 
-router.put('/cards/:id', (req, res, next) => {
-    const { id } = req.params;
-
-    Card.findByIdAndUpdate(id, req.body, { new: true } )
-        .then((updatedCard) => res.json(updatedCard))
-        .catch(error => res.json(error));
-});
-
-router.delete('/cards/:id', (req, res, next) => {
+router.put('/:id', async (req, res, next) => {
   const { id } = req.params;
+  const { image, name, element, description, attack, hp, ability } = req.body;
+  try {
+    const card = await Card.findByIdAndUpdate(id, { image, name, element, description, attack, hp, ability }, { new: true });
+    res.json(card);
+  } catch (error) {
+    next(error);
+  }
+});
 
-  Card.findByIdAndRemove( id )
-    .then(() => res.json({ message: `Card with ${ id } is removed successfully.` }))
-    .catch(error => res.json(error));
+router.delete('/:id', async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const card = await Card.findByIdAndRemove(id);
+    res.json(card);
+  } catch (error) {
+    next(error);
+  }
 });
 
 
