@@ -26,4 +26,13 @@ router.put('/cards/:id', (req, res, next) => {
         .catch(error => res.json(error));
 });
 
+router.delete('/cards/:id', (req, res, next) => {
+  const { id } = req.params;
+
+  Card.findByIdAndRemove( id )
+    .then(() => res.json({ message: `Card with ${ id } is removed successfully.` }))
+    .catch(error => res.json(error));
+});
+
+
 module.exports = router;
