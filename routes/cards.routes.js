@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.post('/cards', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
   const { image, name, element, description, attack, hp, ability } = req.body;
   try {
     const card = await Card.create({ image, name, element, description, attack, HP: hp, ability });
