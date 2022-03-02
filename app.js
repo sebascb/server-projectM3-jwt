@@ -13,7 +13,7 @@ require("./config")(app);
 
 app.use("/api/protected", isAuthenticated, protectedRoute);
 app.use("/auth", authRouter);
-app.use("/", cardRouter());
+app.use("/", cardRouter);
 
 require("./error-handling")(app);
 
