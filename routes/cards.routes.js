@@ -1,17 +1,18 @@
 const router = require('express').Router();
 const Card = require('../models/Card.model');
+const { isAuthenticated } = require('../middleware/jwt.middleware');
 
 router.get('/', async (req, res, next) => {
   console.log("Im here")
   try {
     const card = await Card.find();
-    res.json({ card });
+    res.json({ cards });
   } catch (error) {
     res.json(error);
   }
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', isAuthenticated, async (req, res, next) => {
   const { image, name, element, description, attack, hp, ability } = req.body;
   try {
     const card = await Card.create({ image, name, element, description, attack, HP: hp, ability });
