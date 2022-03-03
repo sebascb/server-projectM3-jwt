@@ -6,8 +6,8 @@ const { route } = require('./auth.routes');
 router.get('/', async (req, res, next) => {
   console.log("Im here")
   try {
-    const card = await Card.find();
-    res.json({ cards });
+    const card = await Card.find({});
+    res.json({ card });
   } catch (error) {
     res.json(error);
   }
@@ -24,14 +24,14 @@ router.get('/:id', async (req, res, next) => {
       res.json(card);
     }
   } catch (error) {
-       next(error); 
+    next(error);
   }
 });
 
-router.post('/', isAuthenticated, async (req, res, next) => {
+router.post('/add', isAuthenticated, async (req, res, next) => {
   const { image, name, element, description, attack, hp, ability } = req.body;
   try {
-    const card = await Card.create({ image, name, element, description, attack, HP: hp, ability });
+    const card = await Card.create({ image, name, element, description, attack, hp, ability });
     res.json({ created: card });
   } catch (error) {
     next(error);
