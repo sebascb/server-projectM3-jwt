@@ -38,7 +38,7 @@ router.post('/', isAuthenticated, async (req, res, next) => {
   }
 });
 
-router.put('/:id', async (req, res, next) => {
+router.put('/:id', isAuthenticated, async (req, res, next) => {
   const { id } = req.params;
   const { image, name, element, description, attack, hp, ability } = req.body;
   try {
@@ -49,7 +49,7 @@ router.put('/:id', async (req, res, next) => {
   }
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', isAuthenticated, async (req, res, next) => {
   const { id } = req.params;
   try {
     const card = await Card.findByIdAndRemove(id);
