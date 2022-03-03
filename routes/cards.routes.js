@@ -22,9 +22,9 @@ router.get('/:id', async (req, res, next) => {
       res.status(404).json({ error: 'Card Not Found' });
     } else {
       res.json(card);
-    }   
+    }
   } catch (error) {
-    next(error);
+       next(error); 
   }
 });
 
