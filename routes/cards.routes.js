@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Card = require('../models/Card.model');
 const { isAuthenticated } = require('../middleware/jwt.middleware');
+const { route } = require('./auth.routes');
 
 router.get('/', async (req, res, next) => {
   console.log("Im here")
@@ -9,6 +10,21 @@ router.get('/', async (req, res, next) => {
     res.json({ cards });
   } catch (error) {
     res.json(error);
+  }
+});
+
+//domain/card/:id
+router.get('/:id', async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const card = await Card.findById(id);
+    if (card === null) {
+      res.status(404).json({ error: 'Card Not Found' });
+    } else {
+      res.json(card);
+    }   
+  } catch (error) {
+    next(error);
   }
 });
 
