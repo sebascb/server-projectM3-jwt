@@ -6,6 +6,7 @@ const isAuthenticated = jwt({
   algorithms: ["HS256"],
   requestProperty: "payload",
   getToken: getTokenFromHeaders,
+  resultProperty: 'locals.user',
 });
 
 // Function used to extracts the JWT token from the request's 'Authorization' Headers

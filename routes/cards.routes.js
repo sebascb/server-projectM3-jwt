@@ -28,7 +28,7 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
-router.post('/add', isAuthenticated, async (req, res, next) => {
+router.post('/', isAuthenticated, async (req, res, next) => {
   const { image, name, element, description, attack, hp, ability } = req.body;
   try {
     const card = await Card.create({ image, name, element, description, attack, hp, ability });
@@ -59,5 +59,19 @@ router.delete('/:id', isAuthenticated, async (req, res, next) => {
   }
 });
 
+router.get('/cards/:id/favorite', isAuthenticated, async (req, res, next) => {
+  const { id } = req.params;
+  const { _id: userId } = req.payload_id;
+  const user = res.locals.user;
+  try {
+    const card = favoriteCreated = await Favorite.create({
+      user: userId,
+      card: id,
+    });
+    res.json(card);
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;
