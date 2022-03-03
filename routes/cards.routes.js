@@ -64,11 +64,11 @@ router.get('/cards/:id/favorite', isAuthenticated, async (req, res, next) => {
   const { _id: userId } = req.payload_id;
   const user = res.locals.user;
   try {
-    const card = favoriteCreated = await Favorite.create({
+    const favoriteCreated = await Favorite.create({
       user: userId,
       card: id,
     });
-    res.json(card);
+    res.json({ created: favoriteCreated });
   } catch (error) {
     next(error);
   }
