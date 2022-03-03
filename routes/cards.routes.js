@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Card = require('../models/Card.model');
+const Favorite = require('../models/Favorite.model')
 const { isAuthenticated } = require('../middleware/jwt.middleware');
 const { route } = require('./auth.routes');
 
@@ -59,10 +60,12 @@ router.delete('/:id', isAuthenticated, async (req, res, next) => {
   }
 });
 
-router.get('/cards/:id/favorite', isAuthenticated, async (req, res, next) => {
+router.post('/:id/favorite', isAuthenticated, async (req, res, next) => {
+  console.log(req.payload);
   const { id } = req.params;
-  const { _id: userId } = req.payload_id;
-  const user = res.locals.user;
+  const userId = req.payload._id;
+  
+
   try {
     const favoriteCreated = await Favorite.create({
       user: userId,
