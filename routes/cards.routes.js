@@ -15,10 +15,11 @@ router.get('/', async (req, res, next) => {
 });
 
 //domain/card/:id
-router.get('/:id', async (req, res, next) => {
+router.get('/:id/detail', async (req, res, next) => {
   const { id } = req.params;
+  const { image, name, element, description, attack, hp, ability } = req.body;
   try {
-    const card = await Card.findById(id);
+    const card = await Card.findById(id, { image, name, element, description, attack, hp, ability });
     if (card === null) {
       res.status(404).json({ error: 'Card Not Found' });
     } else {
@@ -29,6 +30,17 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
+// router.get('/:id/detail', async (req, res, next) => {
+//   const { id } = req.params;
+//   try {
+//     const card = await Card.findById(id);
+//     console.log(card);
+//     res.json({card})
+//   } catch (error) {
+//     next(error);
+//   }
+// });
+
 router.post('/', isAuthenticated, async (req, res, next) => {
   const { image, name, element, description, attack, hp, ability } = req.body;
   try {
@@ -38,6 +50,7 @@ router.post('/', isAuthenticated, async (req, res, next) => {
     next(error);
   }
 });
+
 
 router.put('/:id', isAuthenticated, async (req, res, next) => {
   const { id } = req.params;
