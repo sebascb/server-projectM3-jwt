@@ -15,10 +15,10 @@ router.get('/', async (req, res, next) => {
 });
 
 //domain/card/:id
-router.get('/:id/detail', async (req, res, next) => {
-  const { id } = req.params;
+router.get('/cards/:id', async (req, res, next) => {
+  const { _id } = req.params;
   try {
-    const card = await Card.findById(id);
+    const card = await Card.findById(_id);
     if (card === null) {
       res.status(404).json({ error: 'Card Not Found' });
     } else {
