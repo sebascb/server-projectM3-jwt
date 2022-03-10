@@ -89,4 +89,35 @@ router.post('/:id/favorite', isAuthenticated, async (req, res, next) => {
   }
 });
 
+router.get('/:id/favorite', isAuthenticated, async (req, res, next) => {
+  console.log(req.payload);
+  const { id } = req.params;
+  const userId = req.payload._id;
+
+
+  try {
+    const favoriteCreated = await Favorite.find({
+      user: userId,
+      card: id,
+    });
+    res.json({ created: favoriteCreated });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.delete('/:id/favorite', isAuthenticated, async (req, res, next) => {
+  const { id } = req.params;
+  const userId = req.payload._id;
+  try {
+    const favoriteCreated = await Favorite.findByIdAndRemove({
+      user: userId,
+      card: id,
+    });
+    res.json({ deleted: favoriteCreated });
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
