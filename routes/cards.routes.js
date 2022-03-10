@@ -29,17 +29,6 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
-// router.get('/:id/detail', async (req, res, next) => {
-//   const { id } = req.params;
-//   try {
-//     const card = await Card.findById(id);
-//     console.log(card);
-//     res.json({card})
-//   } catch (error) {
-//     next(error);
-//   }
-// });
-
 router.post('/', isAuthenticated, async (req, res, next) => {
   const { image, name, element, description, attack, hp, ability } = req.body;
   try {
@@ -72,18 +61,28 @@ router.delete('/:id/delete', isAuthenticated, async (req, res, next) => {
   }
 });
 
+router.get('/profile', isAuthenticated, async (req, res, next) => {
+  const userId = req.payload._id;
+  const { id } = req.params;
+  try {
+    const favs = await Favorite.find({ user: userId }).populate({card: id});
+    console.log(favs);
+    res.json({ created: favs })
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.post('/:id/favorite', isAuthenticated, async (req, res, next) => {
   console.log(req.payload);
   const { id } = req.params;
   const userId = req.payload._id;
-  
-
   try {
-    const favoriteCreated = await Favorite.create({
+    const favoriteCreate = await Favorite.create({
       user: userId,
       card: id,
     });
-    res.json({ created: favoriteCreated });
+    res.json({ created: favoriteCreate });
   } catch (error) {
     next(error);
   }
