@@ -121,4 +121,15 @@ router.get('/verify', isAuthenticated, (req, res, next) => {
   res.status(200).json(req.payload);
 });
 
+router.get('/me', isAuthenticated, async (req, res, next) => {
+  const userId = req.payload._id;
+  try {
+    const user = await User.findById(userId);
+    console.log(user);
+    res.json(user)
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;
