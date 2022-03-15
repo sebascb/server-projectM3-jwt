@@ -9,7 +9,6 @@ router.get('/', isAuthenticated, async (req, res, next) => {
   const userId = req.payload._id;
   try {
     const favs = await Favorite.find({ user: userId }).populate('card');
-    console.log(favs);
     res.json(favs)
   } catch (error) {
     console.log(error);
