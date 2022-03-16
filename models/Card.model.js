@@ -13,7 +13,7 @@ const cardSchema = new Schema({
   element: {
     type: String,
     required: [true, 'element is required'],
-    enum: ['fire', 'electric', 'water', 'poison', 'grass', 'ice', 'wind', 'flying', 'bug', 'dark', 'dragon', 'fairy', 'fighting', 'ghost', 'ground', 'normal', 'psychic', 'rock', 'steel'],
+    enum: ['Fire', 'Electric', 'Water', 'Poison', 'Grass', 'Ice', 'Wind', 'Flying', 'Bug', 'Dark', 'Dragon', 'Fairy', 'Fighting', 'Ghost', 'Ground', 'Normal', 'Psychic', 'Rock', 'Steel'],
   },
   description: {
     type: String,
