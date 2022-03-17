@@ -48,6 +48,7 @@ router.get('/:id/favorite', isAuthenticated, async (req, res, next) => {
 });
 
 router.delete('/:id/favorite', isAuthenticated, async (req, res, next) => {
+  console.log("Ha llegado al backend");
   const { id } = req.params;
   const userId = req.payload._id;
   try {

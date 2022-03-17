@@ -77,7 +77,7 @@ const cards = [
   },
   {
     "image": "https://img.pokemondb.net/sprites/home/normal/vulpix.png",
-    "name": "Vulpix",
+    "name": "Pesterix",
     "element": "Fire",
     "description": "When she sleeps she is adorable but if you wake her up she transforms",
     "attack": 50,
