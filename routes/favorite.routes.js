@@ -34,8 +34,6 @@ router.get('/:id/favorite', isAuthenticated, async (req, res, next) => {
   console.log(req.payload);
   const { id } = req.params;
   const userId = req.payload._id;
-
-
   try {
     const favoriteCreated = await Favorite.find({
       user: userId,
@@ -48,6 +46,7 @@ router.get('/:id/favorite', isAuthenticated, async (req, res, next) => {
 });
 
 router.delete('/:id/favorite', isAuthenticated, async (req, res, next) => {
+  console.log('backend borra')
   const { id } = req.params;
   const userId = req.payload._id;
   try {
