@@ -15,7 +15,7 @@ require("./config")(app);
 app.use("/api/protected", isAuthenticated, protectedRoute);
 app.use("/auth", authRouter);
 app.use("/cards", cardRouter);
-app.use('/fav', favRouter);
+app.use("/fav", favRouter);
 
 require("./error-handling")(app);
 
