@@ -9,6 +9,7 @@ router.get('/', isAuthenticated, async (req, res, next) => {
   const userId = req.payload._id;
   try {
     const favs = await Favorite.find({ user: userId }).populate('card');
+    console.log(favs)
     res.json(favs)
   } catch (error) {
     console.log(error);
@@ -50,8 +51,8 @@ router.delete('/:id/favorite', isAuthenticated, async (req, res, next) => {
   const { id } = req.params;
   const userId = req.payload._id;
   try {
-    const favoriteCreated = await Favorite.findByIdAndRemove(id);
-    res.json({ deleted: favoriteCreated });
+    const favoriteDeleted = await Favorite.findOneAndDelete({ card: id, user: userId });
+    res.json({ deleted: favoriteDeleted });
   } catch (error) {
     next(error);
   }
