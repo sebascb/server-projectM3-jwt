@@ -25,7 +25,7 @@ $ npm run main
 
 - Login: As a user I can login to the platform and go to my profile/dashboard.
 
-- Logout: As a user I can logout from the platform so no one else can use it
+- Logout: As a user I can logout from the platform so no one else can use it.
 
 - Edit profiles As a user I can edit my profile.
 
