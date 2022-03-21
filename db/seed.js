@@ -142,7 +142,7 @@ const cards = [
     "image": "https://img.pokemondb.net/sprites/home/normal/abra.png",
     "name": "Abra",
     "element": "Psychic",
-    "description": "",
+    "description": "Using its ability to read minds, it will identify impending danger and TELEPORT to safety.",
     "attack": 20,
     "hp": 25,
     "ability": "Synchronize"
@@ -159,7 +159,7 @@ const cards = [
   {
     "image": "https://img.pokemondb.net/sprites/home/normal/magnemite.png",
     "name": "Magnemite",
-    "element": "electric",
+    "element": "Electric",
     "description": "Uses anti-gravity to stay suspended. Appears without warning and uses THUNDER WAVE and similar moves.",
     "attack": 35,
     "hp": 25,
@@ -228,6 +228,231 @@ const cards = [
     "hp": 30,
     "ability": "Swift Swim"
   },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/staryu.png",
+    "name": "Staryu",
+    "element": "Water",
+    "description": "An enigmatic POKéMON that can effortlessly regenerate any appendage it loses in battle.",
+    "attack": 45,
+    "hp": 30,
+    "ability": "Illuminate"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/mr-mime.png",
+    "name": "Mr. Mime",
+    "element": "Psychic",
+    "description": "If interrupted while it is miming, it will slap around the offender with its broad hands.",
+    "attack": 45,
+    "hp": 40,
+    "ability": "Soundproof"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/magikarp.png",
+    "name": "Magikarp",
+    "element": "Water",
+    "description": "In the distant past, it was somewhat stronger than the horribly weak descendants that exist today.",
+    "attack": 10,
+    "hp": 20,
+    "ability": "Swift Swim"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/ditto.png",
+    "name": "Ditto",
+    "element": "Normal",
+    "description": "Capable of copying an enemy’s genetic code to instantly transform itself into a duplicate of the enemy.",
+    "attack": 48,
+    "hp": 48,
+    "ability": "Limber"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/omanyte.png",
+    "name": "Omanyte",
+    "element": "Rock",
+    "description": "Although long extinct, in rare cases, it can be genetically resurrected from fossils.",
+    "attack": 40,
+    "hp": 35,
+    "ability": "Swift Swim"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/mewtwo.png",
+    "name": "Mewtwo",
+    "element": "Psychic",
+    "description": "It was created by a scientist after years of horrific gene splicing and DNA engineering experiments.",
+    "attack": 60,
+    "hp": 40,
+    "ability": "Insomnia"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/mew.png",
+    "name": "Mew",
+    "element": "Psychic",
+    "description": "So rare that it is still said to be a mirage by many experts. Only a few people have seen it worldwide.",
+    "attack": 50,
+    "hp": 50,
+    "ability": "Synchronize"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/chikorita.png",
+    "name": "Chikorita",
+    "element": "Grass",
+    "description": "A sweet aroma gently wafts from the leaf on its head. It is docile and loves to soak up the sun’s rays.",
+    "attack": 49,
+    "hp": 45,
+    "ability": "Overgrow"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/cyndaquil.png",
+    "name": "Cyndaquil",
+    "element": "Fire",
+    "description": "It is timid, and always curls itself up in a ball. If attacked, it flares up its back for protection.",
+    "attack": 52,
+    "hp": 39,
+    "ability": "Blaze"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/sentret.png",
+    "name": "Sentret",
+    "element": "Normal",
+    "description": "	A very cautious POKéMON, it raises itself up using its tail to get a better view of its surroundings.",
+    "attack": 46,
+    "hp": 39,
+    "ability": "Run Away"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/hoothoot.png",
+    "name": "Hoothoot",
+    "element": "Flying",
+    "description": "	It always stands on one foot. It changes feet so fast, the movement can rarely be seen.",
+    "attack": 30,
+    "hp": 60,
+    "ability": "Insomnia"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/ledyba.png",
+    "name": "Ledyba",
+    "element": "Bug",
+    "description": "It is very timid. It will be afraid to move if it is alone. But it will be active if it is in a group.",
+    "attack": 20,
+    "hp": 40,
+    "ability": "Swarm"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/ledian.png",
+    "name": "Ledian",
+    "element": "Bug",
+    "description": "When the stars flicker in the night sky, it flutters about, scattering a glowing powder.",
+    "attack": 35,
+    "hp": 55,
+    "ability": "Swarm"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/spinarak.png",
+    "name": "Spinarak",
+    "element": "Poison",
+    "description": "It lies still in the same pose for days in its web, waiting for its unsuspecting prey to wander close.",
+    "attack": 50,
+    "hp": 30,
+    "ability": "Swarm"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/pichu.png",
+    "name": "Pichu",
+    "element": "Electric",
+    "description": "It is not yet skilled at storing electricity. It may send out a jolt if amused or startled.",
+    "attack": 40,
+    "hp": 20,
+    "ability": "Static"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/cleffa.png",
+    "name": "Cleffa",
+    "element": "Fairy",
+    "description": "Because of its unusual, star-like silhouette, people believe that it came here on a meteor.",
+    "attack": 25,
+    "hp": 50,
+    "ability": "Cute Charm"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/togepi.png",
+    "name": "Togepi",
+    "element": "Fairy",
+    "description": "The shell seems to be filled with joy. It is said that it will share good luck when treated kindly.",
+    "attack": 20,
+    "hp": 35,
+    "ability": "Hustle"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/togetic.png",
+    "name": "Togetic",
+    "element": "Fairy",
+    "description": "	They say that it will appear before kindhearted, caring people and shower them with happiness.",
+    "attack": 40,
+    "hp": 55,
+    "ability": "Hustle"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/natu.png",
+    "name": "Natu",
+    "element": "Flying",
+    "description": "Because its wings aren’t yet fully grown, it has to hop to get around. It is always staring at something.",
+    "attack": 50,
+    "hp": 40,
+    "ability": "Synchronize"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/mareep.png",
+    "name": "Mareep",
+    "element": "Electric",
+    "description": "If static electricity builds in its body, its fleece doubles in volume. Touching it will shock you.",
+    "attack": 40,
+    "hp": 55,
+    "ability": "Static"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/marill.png",
+    "name": "Marill",
+    "element": "Water",
+    "description": "The tip of its tail, which contains oil that is lighter than water, lets it swim without drowning.",
+    "attack": 20,
+    "hp": 70,
+    "ability": "Thick Fat"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/hoppip.png",
+    "name": "Hoppip",
+    "element": "Grass",
+    "description": "To keep from being blown away by the wind, they gather in clusters. They do enjoy gentle breezes, though.",
+    "attack": 35,
+    "hp": 35,
+    "ability": "Chlorophyll"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/skiploom.png",
+    "name": "Skiploom",
+    "element": "Grass",
+    "description": "The bloom on top of its head opens and closes as the temperature fluctuates up and down.",
+    "attack": 45,
+    "hp": 55,
+    "ability": "Leaf Guard"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/sunkern.png",
+    "name": "Sunkern",
+    "element": "Grass",
+    "description": "It may drop out of the sky suddenly. If attacked by a SPEAROW, it will violently shake its leaves.",
+    "attack": 30,
+    "hp": 30,
+    "ability": "Solar Power"
+  },
+  {
+    "image": "https://img.pokemondb.net/sprites/home/normal/wooper.png",
+    "name": "Wooper",
+    "element": "Water",
+    "description": "This POKéMON lives in cold water. It will leave the water to search for food when it gets cold outside.",
+    "attack": 45,
+    "hp": 55,
+    "ability": "Damp"
+  }
 ];
 mongoose
   .connect(process.env.MONGODB_URI)
@@ -235,7 +460,7 @@ mongoose
     return await Card.deleteMany({});
   })
   .then(() => {
-    const cardsUpdated = cards.map(card => ({ ...card, user: '6228ce8d19f7240075906e70' }));
+    const cardsUpdated = cards.map(card => ({ ...card, user: '6238bdd9c23c39feb680e5b9' }));
     console.log(cardsUpdated);
     return Card.insertMany(cardsUpdated);
   })
