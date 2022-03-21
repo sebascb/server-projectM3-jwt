@@ -75,4 +75,4 @@ Card Poke model
 
 
 # Deploy
-
+https://cranky-lewin-d3d1ec.netlify.app
