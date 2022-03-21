@@ -80,7 +80,5 @@ Card Poke model
 -  Social Network
 -  Meeting point trough the map view
 
-## Links
-https://dashboard.heroku.com/apps/projectm3pok/deploy/github
 # Deploy
-https://cranky-lewin-d3d1ec.netlify.app
+https://dashboard.heroku.com/apps/projectm3pok/deploy/github
