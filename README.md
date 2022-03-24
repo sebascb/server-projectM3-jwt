@@ -78,7 +78,7 @@ Card Poke model
 
 ## Backlog
 -  Social Network
--  Meeting point trough the map view
+-  Meeting point through the map view
 
 # Deploy
 https://dashboard.heroku.com/apps/projectm3pok/deploy/github

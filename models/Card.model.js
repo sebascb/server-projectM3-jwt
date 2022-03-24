@@ -30,9 +30,6 @@ const cardSchema = new Schema({
     type: String,
     required: [true, 'ability is required'],
   },
-  creator: {
-    type: String,
-  },
 });
 
 cardSchema.pre('save', async function (next) {
