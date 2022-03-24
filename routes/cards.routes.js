@@ -30,9 +30,9 @@ router.get('/:id', async (req, res, next) => {
 });
 
 router.post('/', isAuthenticated, async (req, res, next) => {
-  const { image, name, element, description, attack, hp, ability } = req.body;
+  const { image, name, element, description, attack, hp, ability, creator } = req.body;
   try {
-    const card = await Card.create({ image, name, element, description, attack, hp, ability });
+    const card = await Card.create({ image, name, element, description, attack, hp, ability, creator });
     res.json({ created: card });
   } catch (error) {
     next(error);
@@ -42,9 +42,9 @@ router.post('/', isAuthenticated, async (req, res, next) => {
 
 router.put('/:id/edit', isAuthenticated, async (req, res, next) => {
   const { id } = req.params;
-  const { image, name, element, description, attack, hp, ability } = req.body;
+  const { image, name, element, description, attack, hp, ability, creator } = req.body;
   try {
-    const card = await Card.findByIdAndUpdate(id, { image, name, element, description, attack, hp, ability }, { new: true });
+    const card = await Card.findByIdAndUpdate(id, { image, name, element, description, attack, hp, ability, creator }, { new: true });
     res.json(card);
   } catch (error) {
     next(error);

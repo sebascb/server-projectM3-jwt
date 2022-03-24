@@ -460,7 +460,7 @@ mongoose
     return await Card.deleteMany({});
   })
   .then(() => {
-    const cardsUpdated = cards.map(card => ({ ...card, user: '6238bdd9c23c39feb680e5b9' }));
+    const cardsUpdated = cards.map(card => ({ ...card, user: '623c69a563cd82b7af200c4f' }));
     console.log(cardsUpdated);
     return Card.insertMany(cardsUpdated);
   })
